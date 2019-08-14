@@ -1,0 +1,95 @@
+$btn-default-color: #d22c2c;
+$link-hover-color: #d22c2c;
+$btn-link-disabled-color: #d6d6d6;
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #717171;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 1.4rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    cursor: pointer;
+    &,
+    &:active,
+    &.active {
+        &:focus,
+        &.focus {
+            outline: none
+        }
+    }
+    &:hover,
+    &:focus,
+    &.focus {
+        color: $btn-default-color;
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        background-image: none;
+        outline: 0;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        filter: alpha(opacity=65);
+        opacity: .65
+    }
+    &-line {
+        border: .1rem solid #e5e5e5;
+    }
+    &-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 3.9rem;
+        height: 3.9rem;
+        background: $color-white;
+        border: .05rem solid $color-gray;
+        font-size: 0;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: .9rem;
+            width: 1.2rem;
+            height: .1rem;
+            background: $color;
+            transform: rotate(45deg);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: .9rem;
+            width: 1.2rem;
+            height: .1rem;
+            background: $color;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .btn {
+        &-top {
+            right: 3rem;
+            width: 5rem;
+            height: 5rem;
+            &:before {
+                right: .8rem;
+                width: 2rem;
+            }
+            &:after {
+                left: .8rem;
+                width: 2rem;
+            }
+        }
+    }
+}
